@@ -3,6 +3,7 @@ import App from './App.vue' // vue-loader会解析App.vue文件，最终返回�
 import router from './router'
 
 import './lib/mui/css/mui.min.css'
+import './lib/mui/css/icons-extra.css'
 // import Mint from 'mint-ui'
 // import 'mint-ui/lib/style.min.css'
 

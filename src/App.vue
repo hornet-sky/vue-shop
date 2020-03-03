@@ -16,7 +16,7 @@ export default {
   name: 'App',
   data () {
     return {
-      titles: ['首页', '消息', '通讯录', '设置']
+      titles: ['首页', '购物车', '会员', '搜索']
     }
   },
   methods: {
