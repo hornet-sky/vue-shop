@@ -1,12 +1,12 @@
 <template>
   <div>
-    MSite
+    Settings
   </div>
 </template>
 
 <script>
 export default {
-  name: 'MSite'
+  name: 'Settings'
 }
 </script>
 

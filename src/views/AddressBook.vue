@@ -1,12 +1,12 @@
 <template>
   <div>
-    MSite
+    AddressBook
   </div>
 </template>
 
 <script>
 export default {
-  name: 'MSite'
+  name: 'AddressBook'
 }
 </script>
 
