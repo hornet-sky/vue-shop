@@ -1,11 +1,15 @@
 <template>
-  <div>
-    <mt-header fixed :title="titles[$route.meta.idx]">
-      <router-link to="/" slot="left" v-show="$route.meta.idx > 0">
+  <div id="app">
+    <mt-header fixed :title="$route.meta.title">
+      <router-link to="/" slot="left" v-show="$route.meta.title != '首页'">
         <mt-button icon="back">返回</mt-button>
       </router-link>
     </mt-header>
-    <router-view></router-view>
+    <transition>
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
+    </transition>
     <bottom-tabbar></bottom-tabbar>
   </div>
 </template>
@@ -16,7 +20,7 @@ export default {
   name: 'App',
   data () {
     return {
-      titles: ['首页', '购物车', '会员', '搜索']
+      
     }
   },
   methods: {
@@ -27,7 +31,20 @@ export default {
 </script>
 
 <style scoped>
-  div {
+  #app {
     padding: 40px 0 50px 0;
+    background-color: #fff; 
+  }
+  .v-enter-active, .v-leave-active {
+    transition: all .3s ease;
+  }
+  .v-enter {
+    opacity: 0;
+    transform: translateX(100%)
+  }
+  .v-leave-to {
+    position: absolute;
+    opacity: 0;
+    transform: translateX(-100%)
   }
 </style>

@@ -1,18 +1,23 @@
 import Vue from 'vue'
+// 底部导航菜单组件
 import Router from 'vue-router'
-import MSite from '../views/MSite.vue'
-import Cart from '../views/Cart.vue'
-import Members from '../views/Members.vue'
-import Search from '../views/Search.vue'
+import MSite from '../views/bottom-tabbar/MSite.vue'
+import Cart from '../views/bottom-tabbar/Cart.vue'
+import Members from '../views/bottom-tabbar/Members.vue'
+import Search from '../views/bottom-tabbar/Search.vue'
+// 首页九宫格菜单组件
+import NewsList from '../views/grid-9/NewsList.vue'
 
 Vue.use(Router) // 提供 router-link、router-view 等标签
 
 export default new Router({
   routes: [
-    { path: '/msite', component: MSite, meta: { idx: 0 } },
-    { path: '/cart', component: Cart, meta: { idx: 1 } },
-    { path: '/members', component: Members, meta: { idx: 2 } },
-    { path: '/search', component: Search, meta: { idx: 3 } },
-    { path: '/', redirect: '/msite' }
-  ]
+    { path: '/msite', component: MSite, meta: { title: '首页' } },
+    { path: '/cart', component: Cart, meta: { title: '购物车' } },
+    { path: '/members', component: Members, meta: { title: '会员' } },
+    { path: '/search', component: Search, meta: { title: '搜索' } },
+    { path: '/', redirect: '/msite' },
+    { path: '/news_list', component: NewsList, meta: { title: '新闻资讯' } }
+  ],
+  linkActiveClass: 'mui-active' // 用'mui-active' 替换默认的 'router-link-active'
 })
