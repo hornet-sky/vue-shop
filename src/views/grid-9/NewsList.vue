@@ -4,7 +4,7 @@
   infinite-scroll-disabled="scrollDisabled"
   infinite-scroll-distance="10">
     <li class="mui-table-view-cell mui-media" v-for="news in newsList" :key="news.id">
-      <a href="javascript:;">
+      <router-link :to="`${$route.path}/${news.id}`">
         <img class="mui-media-object mui-pull-left" :src="news.img_url">
         <div class="mui-media-body">
           <div class='mui-ellipsis'>{{ news.sub_title }}</div>
@@ -13,7 +13,7 @@
             <span>点击：{{ news.page_view }}次</span>
           </p>
         </div>
-      </a>
+      </router-link>
     </li>
   </ul>
 </template>
@@ -30,7 +30,7 @@ export default {
     return {
       newsList: [],
       pageNumber: -1,
-      pageSize: 3,
+      pageSize: 11,
       loading: false,
       dataEnd: false,
       toast: null

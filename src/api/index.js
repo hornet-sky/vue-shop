@@ -33,7 +33,7 @@ export const reqGrid9MenuItems = () => {
     {
       imgUrl: grid9Icon1,
       title: '新闻资讯',
-      to: '/news_list'
+      to: '/news'
     },
     {
       imgUrl: grid9Icon2,
@@ -69,7 +69,7 @@ export const reqNewsList = (pageNum, pageSize) => {
   const method = "POST"
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      ajax(url, { page_number: pageNum, page_size: pageSize}, method)
+      ajax(url, { page_number: pageNum, page_size: pageSize }, method)
       .then(data => {
         const start = pageNum * pageSize
         const end = start + pageSize
@@ -80,9 +80,62 @@ export const reqNewsList = (pageNum, pageSize) => {
         console.log('error', error)
         reject(error)
       })
-    }, 3000)
+    }, 1000)
   })
 }
 
+export const reqNewsDetail = (newsId) => {
+  const url = 'news_detail'
+  const method = "POST"
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      ajax(url, { news_id: newsId }, method)
+      .then(data => {
+        resolve(data)
+      })
+      .catch(error => {
+        console.log('error', error)
+        reject(error)
+      })
+    }, 1000)
+  })
+}
+
+export const reqNewsComments = (newsId, pageNum, pageSize) => {
+  const url = 'news_comments'
+  const method = "POST"
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      ajax(url, { news_id: newsId, page_number: pageNum, page_size: pageSize }, method)
+      .then(data => {
+        const start = pageNum * pageSize
+        const end = start + pageSize
+        const commentList = data.slice(start, end)
+        resolve(commentList)
+      })
+      .catch(error => {
+        console.log('error', error)
+        reject(error)
+      })
+    }, 1000)
+  })
+}
+
+export const reqNewsCommentAdd = (newsId, comment) => {
+  const url = 'news_comment_add'
+  const method = "POST"
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      ajax(url, { news_id: newsId, comment: comment }, method)
+      .then(data => {
+        resolve(data)
+      })
+      .catch(error => {
+        console.log('error', error)
+        reject(error)
+      })
+    }, 1000)
+  })
+}
 
 // 其他api...
