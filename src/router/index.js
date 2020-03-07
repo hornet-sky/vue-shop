@@ -8,6 +8,7 @@ import Search from '../views/bottom-tabbar/Search.vue'
 // 首页九宫格菜单组件
 import NewsList from '../views/grid-9/NewsList.vue'
 import NewsDetail from '../views/grid-9/NewsDetail.vue'
+import PhotoSharing from '../views/grid-9/PhotoSharing.vue'
 
 Vue.use(Router) // 提供 router-link、router-view 等标签
 
@@ -19,7 +20,8 @@ export default new Router({
     { path: '/search', component: Search, meta: { title: '搜索' } },
     { path: '/', redirect: '/msite' },
     { path: '/news', component: NewsList, meta: { title: '新闻资讯' } },
-    { path: '/news/:id', component: NewsDetail, meta: { title: '新闻详情' } }
+    { path: '/news/:id', component: NewsDetail, meta: { title: '新闻详情' } },
+    { path: '/photo_sharing', component: PhotoSharing, meta: { title: '图片分享' } }
   ],
   linkActiveClass: 'mui-active' // 用'mui-active' 替换默认的 'router-link-active'
 })

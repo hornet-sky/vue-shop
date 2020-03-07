@@ -38,7 +38,7 @@ export const reqGrid9MenuItems = () => {
     {
       imgUrl: grid9Icon2,
       title: '图片分享',
-      to: '/'
+      to: '/photo_sharing'
     },
     {
       imgUrl: grid9Icon3,
@@ -136,6 +136,37 @@ export const reqNewsCommentAdd = (newsId, comment) => {
       })
     }, 1000)
   })
+}
+
+export const reqPhotoSharingTopTabs = () => {
+  // 模拟从服务器端获取数据
+  const fakeData = [
+    {
+      id: 1001,
+      title: '自然风景'
+    },
+    {
+      id: 1002,
+      title: '社会动态'
+    },
+    {
+      id: 1003,
+      title: '动物世界'
+    },
+    {
+      id: 1004,
+      title: '公共抗疫'
+    },
+    {
+      id: 1005,
+      title: '帅哥美女'
+    },
+    {
+      id: 1006,
+      title: 'NBA'
+    }
+  ]
+  return Promise.resolve(fakeData)
 }
 
 // 其他api...
