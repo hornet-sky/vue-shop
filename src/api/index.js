@@ -142,16 +142,20 @@ export const reqPhotoSharingTopTabs = () => {
   // 模拟从服务器端获取数据
   const fakeData = [
     {
+      id: 1000,
+      title: '全部'
+    },
+    {
       id: 1001,
       title: '自然风景'
     },
     {
       id: 1002,
-      title: '社会动态'
+      title: '动物世界'
     },
     {
       id: 1003,
-      title: '动物世界'
+      title: '社会动态'
     },
     {
       id: 1004,

@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <mt-header fixed :title="$route.meta.title">
-      <router-link to="/" slot="left" v-show="$route.meta.title != '首页'">
+      <a @click.prevent="$router.back()" slot="left" v-show="$route.meta.title != '首页'" href="javascript:void(0)">
         <mt-button icon="back">返回</mt-button>
-      </router-link>
+      </a>
     </mt-header>
     <transition>
       <keep-alive>
