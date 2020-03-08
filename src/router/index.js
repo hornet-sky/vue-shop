@@ -10,6 +10,8 @@ import NewsList from '../views/grid-9/NewsList.vue'
 import NewsDetail from '../views/grid-9/NewsDetail.vue'
 import PhotoSharing from '../views/grid-9/PhotoSharing.vue'
 import PhotoSharingDetail from '../views/grid-9/PhotoSharingDetail.vue'
+import GoodsList from '../views/grid-9/GoodsList.vue'
+import GoodsDetail from '../views/grid-9/GoodsDetail.vue'
 
 Vue.use(Router) // 提供 router-link、router-view 等标签
 
@@ -23,7 +25,9 @@ export default new Router({
     { path: '/news', component: NewsList, meta: { title: '新闻资讯' } },
     { path: '/news/:id', component: NewsDetail, meta: { title: '新闻详情' } },
     { path: '/photo_sharing', component: PhotoSharing, meta: { title: '图片分享' } },
-    { path: '/photo_sharing_detail/:id', component: PhotoSharingDetail, meta: { title: '图片分享详情' } }
+    { path: '/photo_sharing_detail/:id', component: PhotoSharingDetail, meta: { title: '图片分享详情' } },
+    { path: '/goods_list', component: GoodsList, meta: { title: '商品列表' } },
+    { path: '/goods_detail/:id', component: GoodsDetail, meta: { title: '商品详情' } }
   ],
   linkActiveClass: 'mui-active' // 用'mui-active' 替换默认的 'router-link-active'
 })

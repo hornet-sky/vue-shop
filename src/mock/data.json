@@ -504,5 +504,51 @@
       "publish_time": 1583667505212,
       "page_view": 221
     }
+  },
+  "goods_list": [
+    {
+      "id": 1001,
+      "name": "小米10 Pro 5G全网定制版 背后三摄",
+      "cover_image": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1581493274.50817754.jpg",
+      "price": 4999,
+      "old_price": 5130,
+      "state": "热卖中",
+      "inventories": 60
+    },
+    {
+      "id": 1002,
+      "name": "小米CC9 Pro",
+      "cover_image": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1572941094.42616676.jpg",
+      "price": 2799,
+      "old_price": 3099,
+      "state": "热卖中",
+      "inventories": 113
+    },
+    {
+      "id": 1003,
+      "name": "Redmi K30",
+      "cover_image": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1575881808.82912751.jpg",
+      "price": 1799,
+      "old_price": 1899,
+      "state": "热卖中",
+      "inventories": 32
+    }
+  ],
+  "goods_details": {
+    "1001": {
+      "id": 1001,
+      "name": "小米10 Pro",
+      "cover_image": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1581493274.50817754.jpg",
+      "images": [
+        "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1581493274.50817754.jpg",
+        "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1581493284.50072469.jpg",
+        "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1581493296.93674159.jpg",
+        "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1581493312.6398004.jpg"
+      ],
+      "price": 4999,
+      "old_price": 5130,
+      "state": "热卖中",
+      "inventories": 60
+    }
   }
 }

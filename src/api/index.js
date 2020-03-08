@@ -43,7 +43,7 @@ export const reqGrid9MenuItems = () => {
     {
       imgUrl: grid9Icon3,
       title: '商品购买',
-      to: '/'
+      to: '/goods_list'
     },
     {
       imgUrl: grid9Icon4,
@@ -220,4 +220,23 @@ export const reqPhotoSharingCommentAdd = (detailId, comment) => {
   })
 }
 
+export const reqGoodsList = (pageNum, pageSize) => {
+  const url = 'goods_list'
+  const method = "POST"
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      ajax(url, { page_number: pageNum, page_size: pageSize }, method)
+      .then(data => {
+        const start = pageNum * pageSize
+        const end = start + pageSize
+        const goodsList = data.slice(start, end)
+        resolve(goodsList)
+      })
+      .catch(error => {
+        console.log('error', error)
+        reject(error)
+      })
+    }, 1000)
+  })
+}
 // 其他api...

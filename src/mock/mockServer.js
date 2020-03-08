@@ -107,7 +107,7 @@ Mock.mock(/\/photo_sharing_comment_add(?:\?.*)*/, options => {
   return {result: 'ok', data: comment} // 返回带ID的评论
 })
 
-
+Mock.mock(/\/goods_list(?:\?.*)*/, {result: 'ok', data: data.goods_list})
 
 
 
