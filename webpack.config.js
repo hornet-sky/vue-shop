@@ -19,6 +19,7 @@ module.exports = {
     rules: [
       { test:/\.vue$/, use: 'vue-loader' },
       { test: /\.css$/, use: ['vue-style-loader', 'css-loader'] },
+      { test: /\.scss$/, use: ['vue-style-loader', 'css-loader', 'sass-loader'] },
       { test: /\.(jpg|png|gif|bmp)$/, use: 'url-loader?limit=17341&name=[hash:8]-[name].[ext]' }, // 处理css里的图片url
       { test: /\.(ttf|eot|svg|woff|woff2)$/, use: ['url-loader'] }, // 处理css里的字体url
       { test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ } // ES6 转 ES5

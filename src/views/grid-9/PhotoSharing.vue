@@ -9,11 +9,20 @@
         </div>
       </div>
     </div>
+    <ul class="photo-items">
+      <li v-for="item in photoItems" :key="item.id">
+        <img v-lazy="item.photo_url">
+        <div clss="photo-item-desc">
+          <h4>{{ item.title }}</h4>
+          <span>{{ item.sub_title }}</span>
+        </div>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
-import { reqPhotoSharingTopTabs } from '../../api'
+import { reqPhotoSharingTopTabs, reqPhotoSharingItems } from '../../api'
 import mui from '../../lib/mui/js/mui'
 export default {
   name: 'PhotoSharing',
@@ -30,7 +39,8 @@ export default {
   data () {
     return {
       topTabs: [],
-      topTabActiveId: null
+      topTabActiveId: null,
+      photoItems: []
     }
   },
   methods: {
@@ -45,10 +55,58 @@ export default {
           MessageBox.alert(error.message, "错误信息");
         })
     }
+  },
+  watch: {
+    topTabActiveId (newVal) {
+      console.log('arguments', arguments, newVal, typeof newVal)
+      if(newVal === null) {
+        this.photoItems = []
+        return
+      }
+      reqPhotoSharingItems(newVal)
+        .then(items => {
+          this.photoItems = items
+        }, error => {
+          MessageBox.alert(error.message, "错误信息");
+        })
+    }
   }
 }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+.photo-items {
+  list-style-type: none;
+  padding: 0 6px;
+  margin: 0;
+  li {
+    position: relative;
+    padding: 3px 0;
+    img {
+      width: 100%;
+      min-height: 375px;
+      vertical-align: middle;
+      background-color: #aaa;
+    }
+    /*
+    img[lazy=loading] {
+      width: 40px;
+      height: 40px;
+      margin: auto;
+    }
+    */
+    div {
+      color: #fff;
+      position:absolute;
+      bottom: 0px;
+      padding: 3px;
+      h4 {
+        font-size: 13px;
+      }
+      span {
+        font-size: 12px;
+      }
+    }
+  }
+}
 </style>

@@ -74,3 +74,22 @@ Mock.mock(/\/news_detail(?:\?.*)*/, options => {
   return {result: 'ok', data: newsDetail}
 })
 
+Mock.mock(/\/photo_sharing_top_tabs(?:\?.*)*/, {result: 'ok', data: data.photo_sharing_top_tabs})
+
+Mock.mock(/\/photo_sharing_items(?:\?.*)*/, options => {
+  const params = JSON.parse(options.body)
+  const tabId = params.tab_id
+  
+  // 下面的逻辑只是为了造假数据，没有实际意义
+  const items = data.photo_sharing_items
+    .filter(item => tabId === 1000 || item.tab_id === tabId)
+  console.log('tab_id', tabId, items)
+  return {result: 'ok', data: items}
+})
+
+
+
+
+
+
+

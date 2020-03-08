@@ -139,38 +139,32 @@ export const reqNewsCommentAdd = (newsId, comment) => {
 }
 
 export const reqPhotoSharingTopTabs = () => {
-  // 模拟从服务器端获取数据
-  const fakeData = [
-    {
-      id: 1000,
-      title: '全部'
-    },
-    {
-      id: 1001,
-      title: '自然风景'
-    },
-    {
-      id: 1002,
-      title: '动物世界'
-    },
-    {
-      id: 1003,
-      title: '社会动态'
-    },
-    {
-      id: 1004,
-      title: '公共抗疫'
-    },
-    {
-      id: 1005,
-      title: '帅哥美女'
-    },
-    {
-      id: 1006,
-      title: 'NBA'
-    }
-  ]
-  return Promise.resolve(fakeData)
+  const url = 'photo_sharing_top_tabs'
+  const method = "POST"
+  return new Promise((resolve, reject) => {
+    ajax(url, {}, method)
+    .then(data => {
+      resolve(data)
+    })
+    .catch(error => {
+      console.log('error', error)
+      reject(error)
+    })
+  })
 }
 
+export const reqPhotoSharingItems = (tabId) => {
+  const url = 'photo_sharing_items'
+  const method = "POST"
+  return new Promise((resolve, reject) => {
+    ajax(url, {tab_id: tabId}, method)
+    .then(data => {
+      resolve(data)
+    })
+    .catch(error => {
+      console.log('error', error)
+      reject(error)
+    })
+  })
+}
 // 其他api...

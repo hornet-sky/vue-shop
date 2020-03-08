@@ -35,6 +35,9 @@ export default {
     padding: 40px 0 50px 0;
     background-color: #fff; 
   }
+  #app header {
+    z-index: 999;
+  }
   .v-enter-active, .v-leave-active {
     transition: all .3s ease;
   }
