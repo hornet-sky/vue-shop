@@ -10,13 +10,13 @@
       </div>
     </div>
     <ul class="photo-items">
-      <li v-for="item in photoItems" :key="item.id">
+      <router-link tag="li" :to="`/photo_sharing_detail/${item.id}`" v-for="item in photoItems" :key="item.id">
         <img v-lazy="item.photo_url">
         <div clss="photo-item-desc">
           <h4>{{ item.title }}</h4>
           <span>{{ item.sub_title }}</span>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
@@ -87,6 +87,7 @@ export default {
       min-height: 375px;
       vertical-align: middle;
       background-color: #aaa;
+      box-shadow:2px 2px 5px #999;
     }
     /*
     img[lazy=loading] {

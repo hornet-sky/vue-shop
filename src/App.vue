@@ -6,9 +6,7 @@
       </a>
     </mt-header>
     <transition>
-      <keep-alive>
-        <router-view></router-view>
-      </keep-alive>
+      <router-view></router-view>
     </transition>
     <bottom-tabbar></bottom-tabbar>
   </div>

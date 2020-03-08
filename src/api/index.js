@@ -167,4 +167,57 @@ export const reqPhotoSharingItems = (tabId) => {
     })
   })
 }
+
+export const reqPhotoSharingDetail = (photoItemId) => {
+  const url = 'photo_sharing_detail'
+  const method = "POST"
+  return new Promise((resolve, reject) => {
+    ajax(url, {photo_item_id: photoItemId}, method)
+    .then(data => {
+      resolve(data)
+    })
+    .catch(error => {
+      console.log('error', error)
+      reject(error)
+    })
+  })
+}
+
+export const reqPhotoSharingComments = (detailId, pageNum, pageSize) => {
+  const url = 'photo_sharing_comments'
+  const method = "POST"
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      ajax(url, { detail_id: detailId, page_number: pageNum, page_size: pageSize }, method)
+      .then(data => {
+        const start = pageNum * pageSize
+        const end = start + pageSize
+        const commentList = data.slice(start, end)
+        resolve(commentList)
+      })
+      .catch(error => {
+        console.log('error', error)
+        reject(error)
+      })
+    }, 1000)
+  })
+}
+
+export const reqPhotoSharingCommentAdd = (detailId, comment) => {
+  const url = 'photo_sharing_comment_add'
+  const method = "POST"
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      ajax(url, { detail_id: detailId, comment: comment }, method)
+      .then(data => {
+        resolve(data)
+      })
+      .catch(error => {
+        console.log('error', error)
+        reject(error)
+      })
+    }, 1000)
+  })
+}
+
 // 其他api...

@@ -473,13 +473,13 @@
       "tab_id": 1002
     }
   ],
-  "photo_sharing_details": [
-    {
+  "photo_sharing_details": {
+    "1001": {
       "id": 1001,
       "title": "坦桑尼亚，坦达岛",
       "sub_title": "它位于一个私人的海洋保护区，那里有非凡的观光和活动。这个岛是完全私人的，只有几个房间，但豪华的设施，活动和工作人员太多，任你摆布。与鲸鲨一起游泳、航海旅行、浮潜、潜水、瑜伽、网球以及各种水上运动都为客人提供。或者，你可以在私人海滩上沐浴阳光，在晶莹剔透的海水里与奇异的海洋生物一起游泳，这似乎是个不错的选择，不是吗？",
       "photo_url": "https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2062769273,1848300159&fm=173&app=49&f=JPEG?w=640&h=436&s=1A943CC44CCE1247020E9F0B030040D9",
-      "photo_details": [
+      "photo_urls": [
         {
           "thumb_url": "https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2062769273,1848300159&fm=173&app=49&f=JPEG?w=640&h=436&s=1A943CC44CCE1247020E9F0B030040D9",
           "url": "https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2062769273,1848300159&fm=173&app=49&f=JPEG?w=640&h=436&s=1A943CC44CCE1247020E9F0B030040D9"
@@ -500,7 +500,9 @@
           "thumb_url": "https://5b0988e595225.cdn.sohucs.com/images/20181031/c4da254a5462441fbdacce9b04b8708e.jpg",
           "url": "https://5b0988e595225.cdn.sohucs.com/images/20181031/c4da254a5462441fbdacce9b04b8708e.jpg"
         }
-      ]
+      ],
+      "publish_time": 1583667505212,
+      "page_view": 221
     }
-  ]
+  }
 }

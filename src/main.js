@@ -22,6 +22,9 @@ Vue.component(TabItem.name, TabItem)
 Vue.use(InfiniteScroll)
 */
 
+import VuePreview from 'vue2-preview'
+Vue.use(VuePreview)
+
 new Vue({
   el: '#app',
   router,

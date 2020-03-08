@@ -83,11 +83,29 @@ Mock.mock(/\/photo_sharing_items(?:\?.*)*/, options => {
   // 下面的逻辑只是为了造假数据，没有实际意义
   const items = data.photo_sharing_items
     .filter(item => tabId === 1000 || item.tab_id === tabId)
-  console.log('tab_id', tabId, items)
   return {result: 'ok', data: items}
 })
 
+Mock.mock(/\/photo_sharing_detail(?:\?.*)*/, options => {
+  const params = JSON.parse(options.body)
+  const photoItemId = params.photo_item_id
+  
+  // 下面的逻辑只是为了造假数据，没有实际意义
+  const detail = data.photo_sharing_details[photoItemId] || {}
+  return {result: 'ok', data: detail}
+})
 
+Mock.mock(/\/photo_sharing_comments(?:\?.*)*/, {result: 'ok', data: data.comment_list})
+Mock.mock(/\/photo_sharing_comment_add(?:\?.*)*/, options => {
+  const params = JSON.parse(options.body)
+  const detailId = params.detail_id
+  const comment = params.comment
+  console.log('params', params)
+  // 假设已经存储到数据库中 并生成了ID
+  const id = String(Date.now())
+  comment.id = id.substring(id.length - 4)
+  return {result: 'ok', data: comment} // 返回带ID的评论
+})
 
 
 
