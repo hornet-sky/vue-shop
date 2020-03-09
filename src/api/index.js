@@ -293,4 +293,20 @@ export const reqGoodsCommentAdd = (goodsId, comment) => {
     }, 500)
   })
 }
+
+export const reqGoodsIntroduction = (goodsId) => {
+  const url = 'goods_introduction'
+  const method = "POST"
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      ajax(url, { goods_id: goodsId }, method)
+      .then(data => {
+        resolve(data)
+      })
+      .catch(error => {
+        reject(error)
+      })
+    }, 500)
+  })
+}
 // 其他api...

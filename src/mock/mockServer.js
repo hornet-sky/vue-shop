@@ -125,3 +125,9 @@ Mock.mock(/\/goods_comment_add(?:\?.*)*/, options => {
   comment.id = id.substring(id.length - 4)
   return {result: 'ok', data: comment}
 })
+
+Mock.mock(/\/goods_introduction(?:\?.*)*/, options => {
+  const params = JSON.parse(options.body)
+  const goodsId = params.goods_id
+  return {result: 'ok', data: data.goods_introductions[goodsId] || {}}
+})
