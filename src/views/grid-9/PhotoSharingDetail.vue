@@ -35,7 +35,7 @@ export default {
       comments: [],
       isLoadMoreBtnShow: false,
       commentPageNumber: -1,
-      commentPageSize: 3,
+      commentPageSize: 3
     }
   },
   computed: {

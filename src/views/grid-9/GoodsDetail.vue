@@ -35,8 +35,8 @@
         </div>
       </div>
       <div class="mui-card-footer">
-        <mt-button type="primary" plain size="large">图文介绍</mt-button>
-        <mt-button type="danger" plain size="large">商品评论</mt-button>
+        <mt-button type="primary" plain size="large" @click="$router.push($route.path + '/introduction')">图文介绍</mt-button>
+        <mt-button type="danger" plain size="large" @click="$router.push($route.path + '/comments')">商品评论</mt-button>
       </div>
     </div>
   </div>

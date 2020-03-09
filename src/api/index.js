@@ -257,4 +257,40 @@ export const reqGoodsDetail = (goodsId) => {
   })
 }
 
+export const reqGoodsComments = (goodsId, pageNum, pageSize) => {
+  const url = 'goods_comments'
+  const method = "POST"
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      ajax(url, { goods_id: goodsId, page_number: pageNum, page_size: pageSize }, method)
+      .then(data => {
+        const start = pageNum * pageSize
+        const end = start + pageSize
+        const commentList = data.slice(start, end)
+        resolve(commentList)
+      })
+      .catch(error => {
+        console.log('error', error)
+        reject(error)
+      })
+    }, 500)
+  })
+}
+
+export const reqGoodsCommentAdd = (goodsId, comment) => {
+  const url = 'goods_comment_add'
+  const method = "POST"
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      ajax(url, { goods_id: goodsId, comment: comment }, method)
+      .then(data => {
+        resolve(data)
+      })
+      .catch(error => {
+        console.log('error', error)
+        reject(error)
+      })
+    }, 500)
+  })
+}
 // 其他api...

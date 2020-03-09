@@ -114,4 +114,14 @@ Mock.mock(/\/goods_detail(?:\?.*)*/, options => {
   return {result: 'ok', data: data.goods_details[goodsId] || {}}
 })
 
-
+Mock.mock(/\/goods_comments(?:\?.*)*/, {result: 'ok', data: data.comment_list})
+Mock.mock(/\/goods_comment_add(?:\?.*)*/, options => {
+  const params = JSON.parse(options.body)
+  const goodsId = params.goods_id
+  const comment = params.comment
+  console.log('params', params)
+  // 假设已经存储到数据库中 并生成了ID
+  const id = String(Date.now())
+  comment.id = id.substring(id.length - 4)
+  return {result: 'ok', data: comment}
+})
