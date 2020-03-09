@@ -20,7 +20,7 @@
           </div>
           <div class="btns">
             <mt-button type="primary">立即购买</mt-button>
-            <mt-button type="danger">加入购物车</mt-button>
+            <mt-button type="danger" @click="addGoodsToCart">加入购物车</mt-button>
           </div>
         </div>
       </div>
@@ -57,10 +57,22 @@ export default {
     return {
       goodsDetail: {},
       swipeImgUrls: [],
-      purchases: 0
+      purchases: 1
     }
   },
+  computed: {
+
+  },
   methods: {
+    addGoodsToCart() {
+      const goods = {
+        id: this.$route.params.id,
+        count: this.purchases,
+        price: this.goodsDetail.price,
+        enabled: true
+      }
+      this.$store.dispatch('addGoodsToCart', goods)
+    },
     loadGoodsDetail () {
       reqGoodsDetail(this.$route.params.id)
         .then(goodsDetail => {
@@ -71,7 +83,7 @@ export default {
         })
     },
     change (purchases) {
-      this.purchases = purchases
+      this.purchases = Number.parseInt(purchases)
     }
   }
 }

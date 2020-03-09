@@ -14,6 +14,8 @@ import Mint from 'mint-ui'
 import 'mint-ui/lib/style.min.css'
 Vue.use(Mint)
 
+import store from './store'
+
 /*
 Vue.component(Header.name, Header)
 Vue.component(Button.name, Button)
@@ -30,5 +32,6 @@ Vue.use(VuePreview)
 new Vue({
   el: '#app',
   router,
+  store,
   render: createElements => createElements(App)
 })
