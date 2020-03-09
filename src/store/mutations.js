@@ -5,9 +5,10 @@ export default {
     if(goodsAdded) {
       goodsAdded.count += goods.count
       goodsAdded.price = goods.price
-      return
+    } else {
+      goodsInCart.push(goods)
     }
-    goodsInCart.push(goods)
+    localStorage.setItem('goodsInCart', JSON.stringify(goodsInCart))
   },
   [MINUS_GOODS_FROM_CART] ({ goodsInCart }, goods) {
     const idx = goodsInCart.findIndex(item => item.id == goods.id)
@@ -18,9 +19,11 @@ export default {
       if(goodsAdded.count <= 0) {
         goodsInCart.splice(idx, 1)
       }
+      localStorage.setItem('goodsInCart', JSON.stringify(goodsInCart))
     }
   },
   [CLEAR_CART] (state) {
     state.goodsInCart = []
+    localStorage.removeItem('goodsInCart')
   }
 }
