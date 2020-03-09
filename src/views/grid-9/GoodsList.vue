@@ -56,7 +56,7 @@ export default {
   margin: 0;
   li {
     border: 1px solid #ccc;
-    box-shadow: 2px 2px 5px #999;
+    box-shadow: 2px 2px 5px #aaa;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

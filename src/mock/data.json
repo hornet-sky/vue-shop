@@ -548,7 +548,9 @@
       "price": 4999,
       "old_price": 5130,
       "state": "热卖中",
-      "inventories": 60
+      "inventories": 60,
+      "goods_no": "SD2932214404",
+      "add_time": 1583720177809
     }
   }
 }

@@ -7,6 +7,8 @@ import './filters'
 
 import './lib/mui/css/mui.min.css'
 import './lib/mui/css/icons-extra.css'
+import mui from './lib/mui/js/mui.min.js'
+Vue.prototype.common = { mui } // 把mui函数放到全局，便于各个模块共用
 
 import Mint from 'mint-ui'
 import 'mint-ui/lib/style.min.css'

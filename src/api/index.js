@@ -239,4 +239,22 @@ export const reqGoodsList = (pageNum, pageSize) => {
     }, 1000)
   })
 }
+
+export const reqGoodsDetail = (goodsId) => {
+  const url = 'goods_detail'
+  const method = "POST"
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      ajax(url, { goods_id: goodsId }, method)
+      .then(goodsDetail => {
+        resolve(goodsDetail)
+      })
+      .catch(error => {
+        console.log('error', error)
+        reject(error)
+      })
+    }, 1000)
+  })
+}
+
 // 其他api...

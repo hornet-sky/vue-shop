@@ -23,14 +23,13 @@
 
 <script>
 import { reqPhotoSharingTopTabs, reqPhotoSharingItems } from '../../api'
-import mui from '../../lib/mui/js/mui'
 export default {
   name: 'PhotoSharing',
   created () {
     this.loadTopTabs()
   },
   mounted () {
-    mui('.mui-scroll-wrapper').scroll({
+    this.common.mui('.mui-scroll-wrapper').scroll({
       scrollY: false, //是否竖向滚动
       scrollX: true, //是否横向滚动
       deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
