@@ -1,4 +1,5 @@
 
 export default {
-  goodsInCart: JSON.parse(localStorage.getItem('goodsInCart') || '[]')
+  goodsInCart: JSON.parse(localStorage.getItem('goodsInCart') || '[]'),
+  cartEle: {}
 }

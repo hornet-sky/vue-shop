@@ -5,7 +5,7 @@
       <span class="mui-tab-label">首页</span>
     </router-link>
     <router-link tag="a" class="mui-tab-item2" to="/cart">
-      <span class="mui-icon mui-icon-extra mui-icon-extra-cart">
+      <span ref="cart" class="mui-icon mui-icon-extra mui-icon-extra-cart">
         <span class="mui-badge" v-show="$store.getters.goodsTotal">{{ $store.getters.goodsTotal }}</span>
       </span>
       <span class="mui-tab-label">购物车</span>
@@ -23,7 +23,10 @@
 
 <script>
 export default {
-  name: 'BottomTabbar'
+  name: 'BottomTabbar',
+  mounted () {
+    this.$store.dispatch('shareCartElement', this.$refs.cart)
+  }
 }
 </script>
 

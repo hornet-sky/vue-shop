@@ -1,4 +1,4 @@
-import { ADD_GOODS_TO_CART, MINUS_GOODS_FROM_CART, CLEAR_CART} from './mutations-type'
+import { ADD_GOODS_TO_CART, MINUS_GOODS_FROM_CART, CLEAR_CART, SHARE_CART_ELEMENT } from './mutations-type'
 
 export default {
   addGoodsToCart ({ commit }, goods) {
@@ -9,5 +9,8 @@ export default {
   },
   clearCart ({ commit }) {
     commit(CLEAR_CART)
+  },
+  shareCartElement ({ commit }, cartEle) { 
+    commit(SHARE_CART_ELEMENT, cartEle)
   }
 }

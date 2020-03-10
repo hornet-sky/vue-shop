@@ -1,4 +1,4 @@
-import { ADD_GOODS_TO_CART, MINUS_GOODS_FROM_CART, CLEAR_CART } from './mutations-type'
+import { ADD_GOODS_TO_CART, MINUS_GOODS_FROM_CART, CLEAR_CART, SHARE_CART_ELEMENT } from './mutations-type'
 export default {
   [ADD_GOODS_TO_CART] ({ goodsInCart }, goods) {
     const goodsAdded = goodsInCart.find(item => item.id == goods.id)
@@ -25,5 +25,8 @@ export default {
   [CLEAR_CART] (state) {
     state.goodsInCart = []
     localStorage.removeItem('goodsInCart')
+  },
+  [SHARE_CART_ELEMENT] (state, cartEle) {
+    state.cartEle = cartEle
   }
 }
