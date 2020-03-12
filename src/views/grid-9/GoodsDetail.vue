@@ -39,8 +39,8 @@
         </div>
       </div>
       <div class="mui-card-footer">
-        <mt-button type="primary" plain size="large" @click="$router.push($route.path + '/introduction')">图文介绍</mt-button>
-        <mt-button type="danger" plain size="large" @click="$router.push($route.path + '/comments')">商品评论</mt-button>
+        <mt-button type="primary" plain size="large" @click="$router.push({ name: 'goodsIntroduction', params: { id: $route.params.id } })">图文介绍</mt-button>
+        <mt-button type="danger" plain size="large" @click="$router.push($route.path + '/comments')">商品评论</mt-button><!-- 两种编程式路由都可以 -->
       </div>
     </div>
   </div>

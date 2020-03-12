@@ -31,7 +31,7 @@ export default new Router({
     { path: '/goods_list', component: GoodsList, meta: { title: '商品列表' } },
     { path: '/goods_detail/:id', component: GoodsDetail, meta: { title: '商品详情' } },
     { path: '/goods_detail/:id/comments', component: GoodsComments, meta: { title: '商品评论' } },
-    { path: '/goods_detail/:id/introduction', component: GoodsIntroduction, meta: { title: '图文介绍' } }
+    { path: '/goods_detail/:id/introduction', component: GoodsIntroduction, name: 'goodsIntroduction', meta: { title: '图文介绍' } }
   ],
   linkActiveClass: 'mui-active' // 用'mui-active' 替换默认的 'router-link-active'
 })
