@@ -1,5 +1,5 @@
 <template>
-  <div ref="numbox" class="mui-numbox" :style="styles" 
+  <div class="mui-numbox" :style="styles" 
       :data-numbox-min='minValue === undefined ? 0 : minValue' 
       :data-numbox-max='maxValue === undefined ? 99 : maxValue'>
     <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
@@ -16,14 +16,20 @@ export default {
     change: Function,
     value: Number,
     minValue: Number,
-    maxValue: Number
+    maxValue: Number,
+    expansions: Object
   },
   methods: {
     valueChange (event) {
-      this.change(event.target.value)
+      console.log('valueChange', event)
+      this.change(Number.parseInt(event.target.value), this.expansions)
     }
   },
+  mounted () {
+    this.common.mui('.mui-numbox').numbox();
+  },
   updated () {
+    console.log('updated', this.minValue, this.maxValue)
     const numbox = this.common.mui('.mui-numbox').numbox();
     numbox.setOption('max', this.maxValue)
     numbox.setOption('min', this.minValue)

@@ -240,6 +240,24 @@ export const reqGoodsList = (pageNum, pageSize) => {
   })
 }
 
+export const reqGoodsListByIds = (goodsIds) => {
+  const url = 'goods_list_by_ids'
+  const method = "POST"
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log('goodsIds -> ', goodsIds)
+      ajax(url, { goods_ids: goodsIds }, method)
+      .then(goodsList => {
+        console.log('goodsList -> ', goodsList)
+        resolve(goodsList)
+      })
+      .catch(error => {
+        reject(error)
+      })
+    }, 500)
+  })
+}
+
 export const reqGoodsDetail = (goodsId) => {
   const url = 'goods_detail'
   const method = "POST"

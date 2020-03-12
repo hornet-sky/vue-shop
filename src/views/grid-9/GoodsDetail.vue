@@ -102,7 +102,7 @@ export default {
         })
     },
     change (purchases) {
-      this.purchases = Number.parseInt(purchases)
+      this.purchases = purchases
     },
     beforeEnter (el) {
       el.style.left = this.ballInitialLeft + 'px'

@@ -107,7 +107,20 @@ Mock.mock(/\/photo_sharing_comment_add(?:\?.*)*/, options => {
   return {result: 'ok', data: comment}
 })
 
-Mock.mock(/\/goods_list(?:\?.*)*/, {result: 'ok', data: data.goods_list})
+Mock.mock(/\/goods_list(?:\?.*)*$/, {result: 'ok', data: data.goods_list})
+Mock.mock(/\/goods_list_by_ids(?:\?.*)*/, options => {
+  const params = JSON.parse(options.body)
+  const goodsIds = params.goods_ids.split(',')
+  const goods = []
+  for(let id of goodsIds) {
+    for(let good of data.goods_list) {
+      if(id == good.id) {
+        goods.push(good)
+      }
+    }
+  }
+  return {result: 'ok', data: goods}
+})
 Mock.mock(/\/goods_detail(?:\?.*)*/, options => {
   const params = JSON.parse(options.body)
   const goodsId = params.goods_id
