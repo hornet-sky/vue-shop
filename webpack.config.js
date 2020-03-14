@@ -12,7 +12,7 @@ module.exports = {
   devServer: {
     open: true,
     port: 3001,
-    host: "172.26.183.1", // 默认是127.0.0.1
+    // host: "172.26.183.1", // 默认是127.0.0.1
     //contentBase: '/dist',
     hot: true
   },
